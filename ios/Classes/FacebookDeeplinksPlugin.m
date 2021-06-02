@@ -65,7 +65,7 @@ static id _instance;
     [self handleLink:self.initialUrl];
 
     if (launchOptions[UIApplicationLaunchOptionsURLKey] == nil) {
-        [FBSDKSettings setAutoInitEnabled:YES];
+        // [FBSDKSettings setAutoInitEnabled:YES];
         [FBSDKApplicationDelegate initializeSDK:nil];
         [FBSDKAppLinkUtility fetchDeferredAppLink:^(NSURL *url, NSError *error) {
             if (error) {
