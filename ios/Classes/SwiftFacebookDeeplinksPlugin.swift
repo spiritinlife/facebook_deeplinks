@@ -30,7 +30,7 @@ public class SwiftFacebookDeeplinksPlugin: NSObject, FlutterPlugin, FlutterStrea
       self.handleLink(url.absoluteString)
     }
 
-    Settings.isAutoInitEnabled = true
+    // Settings.isAutoInitEnabled = true
     ApplicationDelegate.initializeSDK(nil)
     AppLinkUtility.fetchDeferredAppLink { (url, error) in
       if let error = error {
