@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _deeplinkUrl = 'Unknown';
+  String? _deeplinkUrl = 'Unknown';
 
   @override
   void initState() {
@@ -24,10 +24,10 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initPlatformState() async {
-    String deeplinkUrl;
+    String? deeplinkUrl;
 
     var facebookDeeplinks = FacebookDeeplinks();
-    facebookDeeplinks.onDeeplinkReceived.listen(_onRedirected);
+    facebookDeeplinks.onDeeplinkReceived!.listen(_onRedirected);
     deeplinkUrl = await facebookDeeplinks.getInitialUrl();
 
     if (!mounted) return;
@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void _onRedirected(String uri) {
+  void _onRedirected(String? uri) {
     setState(() {
       _deeplinkUrl = uri;
     });
