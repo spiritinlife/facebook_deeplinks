@@ -66,7 +66,6 @@ static id _instance;
 
     if (launchOptions[UIApplicationLaunchOptionsURLKey] == nil) {
         // [FBSDKSettings setAutoInitEnabled:YES];
-        [FBSDKApplicationDelegate initializeSDK:nil];
         [FBSDKAppLinkUtility fetchDeferredAppLink:^(NSURL *url, NSError *error) {
             if (error) {
                 NSLog(@"Received error while fetching deferred app link %@", error);
